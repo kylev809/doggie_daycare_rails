@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :dogs, only: [:index]
+
+
   get 'pages/index'
 
   get '/about' =>'pages#about'
