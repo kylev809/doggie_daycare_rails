@@ -5,10 +5,16 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+  <%= yield %>
+  <%= link_to "Home", root_path %>
 <%= link_to "About", about_path %>
-<%= yield %>
+
+[8:39]
+get '/about' => 'pages#about'
+</head>
+
+<body>
+
 
 </body>
 </html>
