@@ -4,11 +4,13 @@
 </p>
 <table>
   <thead>
+
     <tr>
       <th>ID</th>
       <th> Name</th>
       <th>Breed</th>
       <th>Age</th>
+      <th colspan=2> Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,11 +18,12 @@
      <tr>
        <td><%= dog.id %> </td>
 
-       <td><%=link_to_dog.name, dog_path(dog) %></td>
+       <td><%=link_to dog.name, dog_path(dog) %></td>
         <td><%= dog.name %> </td>
        <td><%= dog.breed %> </td>
        <td><%= dog.age %></td>
-
+      <td><%= link_to "Edit", edit_dog_path(dog) %></td>
+      <td> <%= link_to "Delete", dog, method: :delete, data: { confirm: "Are you sure?"} %></td>
      </tr>
     <% end %>
 

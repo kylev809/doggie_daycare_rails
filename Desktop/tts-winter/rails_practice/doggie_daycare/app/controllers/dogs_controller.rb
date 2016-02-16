@@ -18,6 +18,31 @@ class DogsController < ApplicationController
    end
  end
 
+   def edit
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+
+    if @dog.update(dog_params)
+      redirect_to dog_url(@dog), notice: "Dog updated!"
+    else
+      flash.now[:notice] = "Could not update dog :("
+      render :edit
+    end
+  end
+  def destroy
+    @dog = Dog.find(params[:id])
+
+    if @dog.destroy
+      redirect_to dogs_url, notice: "Successfully deleted!"
+    else
+      redirect_to dogs_url, notice: "Could not delete dog."
+    end
+  end
+
+
  private
 
  def dog_params
