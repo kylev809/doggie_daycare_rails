@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :dogs, only: [:index]
+  resources :dogs, only: [:index, :new, :create, :show]
 
 
   get 'pages/index'
 
   get '/about' =>'pages#about'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
